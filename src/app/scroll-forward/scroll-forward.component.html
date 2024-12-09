@@ -1,0 +1,22 @@
+<h2>Forward</h2>
+
+<p-scroller #scroller
+  scrollHeight="30rem"
+  styleClass="border-1 surface-border w-full"
+  [items]="dataSourceApiService.getData()"
+  [trackBy]="trackByFn"
+  [itemSize]="itemHeight"
+  [lazy]="true"
+  (onLazyLoad)="loadFirstTime($event)"
+  (onScrollIndexChange)="scrollIndexChange($event)"
+>
+  <ng-template pTemplate="item" let-item let-options="options">
+    <div [id]="item.id" class="scroller-item pl-2 pr-4" [ngClass]="{ 'surface-ground': options.odd }">
+      <div class="quote">({{item.id}})  {{ item.quote }}</div>
+      <div class="author">-- {{ item.author }}</div>
+    </div>
+    <div *ngIf="item.id === dataSourceApiService.lastItem().id">
+      &nbsp;
+    </div>
+  </ng-template>
+</p-scroller>

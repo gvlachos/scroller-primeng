@@ -6,7 +6,7 @@
   },
   "newProjectRoot": "projects",
   "projects": {
-    "scroller-primeng": {
+    "primeng-scroller": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -20,7 +20,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/scroller-primeng",
+            "outputPath": "dist/primeng-scroller",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -67,10 +67,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "scroller-primeng:build:production"
+              "buildTarget": "primeng-scroller:build:production"
             },
             "development": {
-              "buildTarget": "scroller-primeng:build:development"
+              "buildTarget": "primeng-scroller:build:development"
             }
           },
           "defaultConfiguration": "development"
